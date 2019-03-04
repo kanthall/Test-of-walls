@@ -7,6 +7,7 @@ public class BasicMovement : MonoBehaviour
 
     [SerializeField] float speed;
     public Animator animator;
+    [SerializeField] GameObject targetPoint;
 
     void Start()
     {
@@ -22,19 +23,25 @@ public class BasicMovement : MonoBehaviour
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), (Input.GetAxis("Vertical")), 0f);
         transform.position = transform.position + move * Time.deltaTime * speed;
 
-        Vector3 targetMovePosition = transform.position + move * speed * Time.deltaTime;
-        RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, move, speed * Time.deltaTime);
 
-        Vector3 right = transform.TransformDirection(Vector3.right) * 10;
+        Vector3 raycastDir = new Vector3(2f, 0f, 0f);
+        Vector3 posRay = new Vector3(2f, 0f, 0f);
 
-        if (raycastHit.collider == null)
+        Debug.DrawRay(transform.position, raycastDir, Color.red);
+
+        RaycastHit2D hit = Physics2D.Raycast(raycastDir, Vector3.zero);
+
+        //If something was hit, the RaycastHit2D.collider will not be null.
+        if (hit.collider != null)
         {
-            transform.position = targetMovePosition;
-            Debug.DrawRay(transform.position, right, Color.red);
+            Debug.Log("Hit");
+        } 
+        else if (hit.collider.name == "Wall")
+            {
+            Debug.Log("ściana");
         }
-        else
-        { 
 
-        }
+
     }
 }
+
