@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 6372993193028662197}
   - component: {fileID: 5412370820428188959}
   - component: {fileID: 7526689522585133710}
-  m_Layer: 0
+  - component: {fileID: 740056169838164327}
+  m_Layer: 2
   m_Name: Adventurer - Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  animator: {fileID: 552562241094512255, guid: 8967186bcbcfd9841bad5b0c0c3ae721, type: 3}
+  animator: {fileID: 740056169838164327}
+  targetPoint: {fileID: 0}
 --- !u!50 &5412370820428188959
 Rigidbody2D:
   serializedVersion: 4
@@ -144,6 +146,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1463976, y: 1.7875662}
   m_EdgeRadius: 0
+--- !u!95 &740056169838164327
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740056169838164326}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3f88de635998c5049a7afcd4e36627bc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6303367667871486964
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1019998928235581119}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
